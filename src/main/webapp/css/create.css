@@ -1,0 +1,179 @@
+body,html{
+	padding: 0;
+	margin: 0;
+	background: #ffffff;
+}
+.head{
+	position: relative;
+	height: 40px;
+	width: 100%;
+	margin: 0 auto;
+}
+.left{
+	float: left;
+	padding: 10px 10px 10px 20px;
+	/* border: 1px red solid; */
+}
+.right{
+	float: right;
+	padding: 10px 20px 10px 10px;
+	/* border: 1px red solid; */
+}
+
+.mui-icon-closeempty,.mui-icon-checkmarkempty{
+	color: black;
+	font-size: 50px;
+	font-weight: 400;
+}
+.con{
+	padding-left: 0;
+	margin-top: 30px;
+	width: 100%;
+}
+.my-con-head{
+	font-family: "微软雅黑";
+	font-size: 3rem;
+	margin-left: 25px;
+	text-align: left;
+}
+.con-hr{
+	width: 90%;
+	height: 1px;
+	margin: 20px auto;
+	border-radius: 1px;
+	background: rgb(230,230,230);
+}
+.choseTime{
+	margin: 0 auto;
+	width: 80%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 2rem;
+}
+.ctime-msg{
+	float: left;
+}
+.chtime{
+	position: relative;
+	float: right;
+	width: 40%;
+}
+.hour{
+	width: 45%;
+	height: 50px;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	border: 1px rgb(200,200,200) solid;
+	border-radius: 10px;
+	overflow: auto;
+}
+#position-hour-text{
+	margin-top: 10px;
+}
+.dom{
+	float: left;
+	width: 10%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+.min{
+	width: 45%;
+	height: 50px;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+	border: 1px rgb(200,200,200) solid;
+	border-radius: 10px;
+	overflow: auto;
+}
+#title{
+	border: 1px solid rgb(240,240,240);
+	border-radius: 10px;
+	background: rgb(240,240,240);
+	height: 50px;
+	font-size: 2rem;
+}
+
+#content{
+	position: relative;
+	border: 1px solid rgb(240,240,240);
+	border-radius: 10px;
+	background: rgb(240,240,240);
+	height: 80px;
+	font-size: 2rem;
+	padding: 10px;
+	overflow: auto;
+	color: rgb(153,153,153);
+}
+.tips{
+	position: absolute;
+	top: 10px;
+	left: 29px;
+	width: 100%;
+	height: auto;
+	font-size: 2rem;
+	color: rgb(153,153,153);
+}
+
+
+/*<div class="series">*/
+/*				   <div class="series-title"></div>*/
+/*											   <input class="series-input" />*/
+/*																			</div>*/
+.series{
+	margin: 15px auto;
+	width: 80%;
+	height: 50px;
+	font-size: 2rem;
+}
+.series-title{
+	width: 50%;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	float: left;
+}
+.series-input{
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+	width: 20%;
+	height: 30px;
+	border-radius: 10px;
+	border: #6d6d72 1px solid;
+	padding: 0 10px 0 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.series-end{
+	margin-top: 10px;
+	margin-right: 0px;
+	float: right;
+	width: 10%;
+	height: 30px;
+	line-height: 30px;
+}
+
+.sendmail{
+	margin: 15px auto;
+	width: 80%;
+	height: 50px;
+}
+.message{
+	width: 50%;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	float: left;
+	font-size: 2rem;
+}
+#mySwitch{
+	margin-top: 10px;
+	float: right;
+}
+
+.div-bottom{
+	position: relative;
+}

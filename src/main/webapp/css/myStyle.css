@@ -1,0 +1,267 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	background: rgb(247,247,247)
+}
+.calendar1 {
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	border-spacing: 0px;
+	-webkit-touch-callout: none;     
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	/* overflow: hidden;
+	height: 20px; */
+	top: 0;
+	z-index: -1;
+}
+.calendar2 {
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	border-spacing: 0px;
+	-webkit-touch-callout: none;     
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	z-index: -2;
+}
+.move_top{
+	top: 90px;
+}
+.bar{
+	margin: 0 auto;
+	width: 10%;
+	height: 4px;
+	border-spacing: 0px;
+	border-radius: 2px;
+	background: #A9A9A9;
+}
+.keepOut{
+	background: rgb(247,247,247);
+	width: 100%;
+	height: 250px;
+}
+.bar-debug{
+	background: red;
+}
+#month {
+	height: 50px;
+	width: 250px;
+	font-family: "微软雅黑";
+	font-size: larger;
+	table-layout: fixed;
+	background: rgb(247,247,247);
+	text-align: center;
+	color: black;
+}
+
+.left-arrow-div{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	width: 90px;
+	
+}
+.left-arrow{
+	padding-top: 15px;
+	font-family: "微软雅黑";
+	font-size: larger;
+	table-layout: fixed;
+	text-align: center;
+	color: rgb(192,192,192);
+}
+.right-arrow-div{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 50px;
+	width: 90px;
+}
+.right-arrow{
+	padding-top: 15px;
+	height: 50px;
+	width: 90px;
+	font-family: "微软雅黑";
+	font-size: larger;
+	table-layout: fixed;
+	text-align: center;
+	color: rgb(192,192,192);
+}
+
+.week {
+	position: relative;
+	width: 14.3%;
+	height: 40px;
+	background: rgb(247,247,247);
+	color: rgb(192,192,192);
+	text-align: center;
+	font-family: "微软雅黑";
+}
+
+.move_height{
+	height: 60px;
+}
+.date {
+	/* background: royalblue; */
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: black;
+	text-align: center;
+	line-height: 50px;
+	font-family: "微软雅黑";
+}
+.date_color{
+	background: rgb(222,222,222);
+}
+.date_color_now{
+	background: rgb(42,151,255);
+	color: white;
+}
+.date_div{
+	position: relative;
+	width: 14.3%;
+	height: 20px;
+	/* background: rgb(222,222,222); */
+}
+.condiv{
+	height: 500px;
+	width: 100%;
+	border: 1px red solid;
+	overflow: auto; 
+}
+.taskName{
+	position: relative;
+	width: 89%;
+	height: 50px;
+	margin: 15px auto 0 auto;
+	border-radius: 20px;
+	background: white;
+	overflow: auto;
+	text-align: left;
+	line-height: 50px;
+	padding-left: 15px;
+}
+.right{
+	position: absolute;
+	top: 3px;
+	right: 10px;
+}
+.lnr-chevron-left{
+	color: rgb(200,200,200);
+	font-weight: 800;
+}
+.lnr-chevron-down{
+	color: rgb(200,200,200);
+	font-weight: 800;
+}
+.taskNote{
+	width: 92%;
+	height: 280px;
+	margin: 0 auto 0 16px;
+	border-radius: 20px;
+	background: white;
+	padding: 15px;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	border-top: 1px rgb(247,247,247) solid;
+	display: none;
+}
+.edit-delete{
+	margin-right: 4%;
+	float: right;
+	border-radius: 5px;
+	/*background: rgb(253,219,219);*/
+	color: #e8b5b5;
+	width: 70px;
+	height: 30px;
+	background: #c97272;
+	text-align: center;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+.edit-edit{
+	margin-right: 4%;
+	float: right;
+	border-radius: 5px;
+	background: #CCCC99;
+	width: 70px;
+	height: 30px;
+	/*color: rgb(112,112,112);*/
+	color: #666666;
+	text-align: center;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+.hidden{
+	display: none;
+}
+.tonow{
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 50px;
+	right: 110px;
+	border-radius: 50%;
+	background: rgb(42,151,255);
+	color: white;
+	font-size: 2rem;
+	text-align: center;
+	line-height: 60px;
+}
+.tonow_hidden{
+	display: none;
+}
+.add{
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 50px;
+	right: 30px;
+	border-radius: 50%;
+	background: white;
+	color: rgb(42,151,255);
+	border: 1px rgb(42,151,255) solid;
+	font-size: 3rem;
+	text-align: center;
+	line-height: 60px;
+	box-sizing: border-box;
+}
+.taskDot_before{
+	bottom: 6px;
+	right: 9px;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #6d6d72;
+	z-index: 10;
+}
+.taskDot_after{
+	bottom: 6px;
+	right: 9px;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: tomato;
+	z-index: 10;
+}
+
+
+
+
+
+
+
+

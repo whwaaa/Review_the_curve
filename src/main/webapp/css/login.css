@@ -1,0 +1,151 @@
+html,body{
+	width: 100%;
+	height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.email-div{
+    position: relative;
+    margin: 24px auto 0 auto;
+    /*position: absolute;*/
+    /*top: 350PX;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    width: 80%;
+    height: 60px;
+    background: rgb(227,227,227);
+    border-radius: 30px
+}
+.email-div-title,.vercode-div-title{
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 30%;
+    height: 46px;
+    border-right: white 3px solid;
+    color: #6d6d72;
+    line-height: 46px;
+    box-sizing: border-box;
+}
+.email{
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 70%;
+    height: 46px;
+    border: none;
+    outline: none;
+    color: #6d6d72;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+    background: rgba(0,0,0,0);
+    box-sizing: border-box;
+}
+
+.vercode-div{
+    position: relative;
+    margin: 10px auto 0 auto;
+    /*position: absolute;*/
+    /*top: 420px;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    width: 80%;
+    height: 60px;
+    background: rgb(227,227,227);
+    border-radius: 30px
+}
+.getVerCode{
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 35%;
+    height: 46px;
+    line-height: 46px;
+    color: #6d6d72;
+    border-left: white 3px solid;
+}
+.vercode{
+    position: absolute;
+    top: 7px;
+    left: 30%;
+    width: 35%;
+    border: none;
+    outline: none;
+    height: 46px;
+    line-height: 46px;
+    color: #6d6d72;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(0,0,0,0);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.sub{
+    position: relative;
+    margin: 15px auto 0 auto;
+    /*position: absolute;*/
+    /*top: 490px;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    width: 60%;
+    height: 40px;
+    background: rgb(191, 172, 142);
+    border-radius: 40px;
+    line-height: 40px;
+    color: rgb(247,247,247);
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    color: rgb(247,247,247)
+}
+.bg-img{
+	margin: 30px auto 10px auto;
+	width: 365px;
+	height: 240px;
+	background: url(../img/bg0.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.titleHead1{
+	margin: 45px auto 10px;
+	color: #6d6d72;
+}
+.titleHead2{
+	margin: 0;
+	color: #6d6d72;
+}
+.titleHead3{
+	margin: 16px auto 0 auto;
+	color: #6d6d72;
+}
+.titleHead4{
+	margin: 0;
+	color: #6d6d72;
+}
+.titleFoot{
+	position: absolute;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	bottom: 60px;
+	font-size: 0.8px;
+	color: #6d6d72;
+}
+.freeLogin-text{
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	font-size: 0.8rem;
+	color: #6d6d72;
+}
+
+
+
+
+
+
+
+
