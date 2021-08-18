@@ -1,7 +1,8 @@
-url = "http://whw.free.idcfengye.com"
-urlPara = "?jsoncallback=?"
-// var url = ""
-// var urlPara = ""
+var url = "http://whw.free.idcfengye.com"
+// var urlPara = "?jsoncallback=?"
+// var url = "http://127.0.0.1:8089"
+// var urlPara = "?jsoncallback=?"
+var urlPara = ""
 
 $(function(){
 	/*-------- 获取get参数并修改时间 --------*/
@@ -70,7 +71,7 @@ $(function(){
 			var series = $(".series-input").val();
 			var uid = $.cookie("uid")
 
-			$.getJSON(url+"/task/addTask.do"+urlPara,{uid:uid,time:time,title:title,content:content,mailRe:mailRe,series:series},function (data) {
+			$.post(url+"/task/addTask.do"+urlPara,{uid:uid,time:time,title:title,content:content,mailRe:mailRe,series:series},function (data) {
 				layer.closeAll()
 				if(data.status == 0){
 					// 提交成功

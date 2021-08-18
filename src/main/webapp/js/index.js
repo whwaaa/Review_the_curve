@@ -1,7 +1,8 @@
-url = "http://whw.free.idcfengye.com"
-urlPara = "?jsoncallback=?"
-// var url = ""
-// var urlPara = ""
+var url = "http://whw.free.idcfengye.com"
+// var urlPara = "?jsoncallback=?"
+// var url = "http://127.0.0.1:8089"
+// var urlPara = "?jsoncallback=?"
+var urlPara = ""
 
 $(function () {
 	/*----------- 全局变量 -----------*/
@@ -33,7 +34,7 @@ $(function () {
 	layer.load(0)
 	var uid = $.cookie("uid")
 	// 1.查询所有学习任务
-	$.getJSON(url + "/task/getAllTask.do" + urlPara,{uid:uid},function (data) {
+	$.post(url + "/task/getAllTask.do" + urlPara,{uid:uid},function (data) {
 		layer.closeAll()
 		if(data.status == 0){
 			$.each(data.data,function(){
@@ -42,7 +43,8 @@ $(function () {
 					var time = this.time
 					var status = this.status
 					var tid = _this.tid;
-					var timeObj = {time:time,title:_this.title,status:status,content:_this.content,tid:tid}
+					var tomkdown = markdown.toHTML(h2m(_this.content, {converter: 'CommonMark'}))
+					var timeObj = {time:time,title:_this.title,status:status,content:tomkdown,tid:tid}
 					timeList.push(timeObj)
 				})
 			})
@@ -161,7 +163,7 @@ $(function () {
 			layer.load(0)
 			// 获取tid
 			var tid = $(_this).parents(".task").find(".tid").val()
-			$.getJSON(url + "/task/delete.do" + urlPara,{tid:tid},function(data){
+			$.post(url + "/task/delete.do" + urlPara,{tid:tid},function(data){
 				layer.closeAll()
 				if(data.status == 0){
 					layer.msg(data.result)
@@ -181,10 +183,6 @@ $(function () {
 		window.location.href = "update.html?tid=" + tid
 	})
 
-
-
-
-
 	
 	/*----------- 初始化参数 -----------*/
 	init()
@@ -199,7 +197,8 @@ $(function () {
 		// 1.改图标
 		// 2.taskNote动画
 		// 3."今"图标隐藏或显示
-		if($(this).parents(".task").find(".taskNote").css("display") == "inline-block"){
+		console.log($(this).parents(".task").find(".taskNote").css("display"))
+		if($(this).parents(".task").find(".taskNote").css("display") == "block"){
 			// 改为隐藏
 			$(this).parents(".task").find(".taskNote").slideUp("normal");
 			$(this).find(".lnr").removeClass("lnr-chevron-down")
@@ -214,6 +213,10 @@ $(function () {
 				moveDefault() // 2 -> 中
 		}else{
 			// 改为显示
+			/*----------- 自适应宽度调整 -----------*/
+			var wi = $(".taskName").width()
+			console.log(wi)
+			$(".taskNote").width(wi-15)
 			$(this).parents(".task").find(".taskNote").slideDown("normal");
 			$(this).find(".lnr").addClass("lnr-chevron-down")
 			$(this).find(".lnr").removeClass("lnr-chevron-left")
@@ -393,17 +396,17 @@ $(function () {
 			}
 		}
 		for(var i=0; i<dayTask.length; i++) {
-			var $div =
+			var $div = $(
 				"<div class=\"task\">\n" +
 				"<input class='tid' type='hidden' value=" + dayTask[i]["tid"] + ">" +
 				"\t\t\t<div class=\"taskName\">\n" +
 				"\t\t\t\t<div class=\"text\">" + dayTask[i]["title"] + "   ——" + dayTask[i]["status"] + "</div>\n" +
-				"\t\t\t\t<div class=\"right\"><span class=\"lnr lnr-chevron-left\"></span></span></div>\n" +
+				"\t\t\t\t<div class=\"right\"><span class=\"lnr lnr-chevron-left\"></span></div>\n" +
 				"\t\t</div>\n" +
-				"\t\t<textarea class=\"taskNote\">" + dayTask[i]["content"] + "</textarea>" +
+				"\t\t<div class=\"taskNote\">" + dayTask[i]["content"] + "</div>" +
 				"<div class=\"edit-edit hidden\"><span class=\"lnr lnr-magic-wand \"></span>&nbsp;&nbsp;编辑</div>" +
 				"<div class=\"edit-delete hidden\"><span class=\"lnr lnr-trash \"></span>&nbsp;&nbsp;删除</div>" +
-			"</div>";
+			"</div>");
 			$(".condiv2").append($div);
 		}
 	
@@ -414,7 +417,7 @@ $(function () {
 				"\t\t\t\t<div class=\"text\">空</div>\n" +
 				"\t\t\t\t<div class=\"right\"><span class=\"lnr lnr-chevron-left\"></span></span></div>\n" +
 				"\t\t</div>\n" +
-				"\t\t<textarea class=\"taskNote\">也是空的</textarea>" +
+				"\t\t<div class=\"taskNote\">也是空的</div>" +
 			"</div>";
 			$(".condiv2").append($div);
 		}

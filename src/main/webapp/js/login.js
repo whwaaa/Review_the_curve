@@ -1,7 +1,8 @@
-url = "http://whw.free.idcfengye.com"
-urlPara = "?jsoncallback=?"
-// var url = ""
-// var urlPara = ""
+var url = "http://whw.free.idcfengye.com"
+// var urlPara = "?jsoncallback=?"
+// var url = "http://127.0.0.1:8089"
+// var urlPara = "?jsoncallback=?"
+var urlPara = ""
 
 $(function(){
 
@@ -10,7 +11,7 @@ $(function(){
     var query = window.location.search.substring(1);
 
     var token = query.split("=")[1]
-    $.getJSON(url+"/user/checkToken.do"+urlPara, {token:token},function(data){
+    $.post(url+"/user/checkToken.do", {token:token}, function(data){
         layer.closeAll();
         if(data.status == 0){
             // 直链登录成功
@@ -49,7 +50,7 @@ $(function(){
             // 发送验证码
             layer.load(0)
             var email = $(".email").val().trim()
-            $.getJSON(url + "/user/getVerCode.do" + urlPara, {email:email},function(data){
+            $.post(url + "/user/getVerCode.do" + urlPara, {email:email},function(data){
                 layer.closeAll();
                 if(data.status == 0){
                     layer.msg(data.result)
@@ -90,7 +91,7 @@ $(function(){
         var email = $(".email").val().trim();
         if(!verCode == ""){
             layer.load(0)
-            $.getJSON(url + "/user/login.do" + urlPara,{varToken:varToken,verCode:verCode,email:email},function(data){
+            $.post(url + "/user/login.do" + urlPara,{varToken:varToken,verCode:verCode,email:email},function(data){
                 layer.closeAll()
                 if(data.status == 0){
                     // 注册/登录成功
@@ -120,7 +121,7 @@ $(function(){
 			$(".bg-img").slideUp()
         }
     })
-	
+
 	 /*------- 监听输入 -------*/
 	 var ti
 	 $(".email").on("click",function(){
@@ -138,14 +139,14 @@ $(function(){
 		ti = setTimeout(function(){
 			clearTimeout(ti)
 		},10)
-		
+
 	 })
-	
+
 	 $("body").on("click",function(){
 		 ti = setTimeout(function(){
 			 $(".bg-img").slideDown();
 		 },100)
 	 })
-	
+
 })
 

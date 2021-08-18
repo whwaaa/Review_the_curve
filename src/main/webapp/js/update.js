@@ -1,7 +1,8 @@
-url = "http://whw.free.idcfengye.com"
-urlPara = "?jsoncallback=?"
-// var url = ""
-// var urlPara = ""
+var url = "http://whw.free.idcfengye.com"
+// var urlPara = "?jsoncallback=?"
+// var url = "http://127.0.0.1:8089"
+// var urlPara = "?jsoncallback=?"
+var urlPara = ""
 
 $(function (){
     /*-------- 获取get参数 --------*/
@@ -13,7 +14,7 @@ $(function (){
     var date;
     var hour;
     var min;
-    $.getJSON(url+"/task/getTaskByTid.do"+urlPara,{tid:tid},function(data){
+    $.post(url+"/task/getTaskByTid.do"+urlPara,{tid:tid},function(data){
         console.log(data);
         task = data.data;
         time = task.timeList[0].time
@@ -83,7 +84,7 @@ $(function (){
             var series = $(".series-input").val();
             var uid = $.cookie("uid")
 
-            $.getJSON(url + "/task/update.do" + urlPara,{uid:uid,time:time,title:title,content:content,isActive:isActive,series:series,tid:tid},function (data) {
+            $.post(url + "/task/update.do" + urlPara,{uid:uid,time:time,title:title,content:content,isActive:isActive,series:series,tid:tid},function (data) {
                 layer.closeAll()
                 if(data.status != -1){
                     // 修改成功
